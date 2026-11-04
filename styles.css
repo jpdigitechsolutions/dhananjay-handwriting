@@ -87,3 +87,25 @@ input:focus, select:focus, textarea:focus {
     transform: scale(1);
   }
 }
+
+
+/* Nav Link Micro-Interaction */
+.nav-link {
+  position: relative;
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 2px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background-color: #dc2626;
+  transition: width 0.2s ease;
+  transform: translateX(-50%);
+  border-radius: 9999px;
+}
+.nav-link:hover::after {
+  width: 60%;
+}

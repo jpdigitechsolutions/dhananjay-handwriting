@@ -254,13 +254,13 @@ function handleInquirySubmit(event) {
 const translations = {
   en: {
     top_notice: "Handwriting Material Free • Individual 1-on-1 Teaching • All Ages Welcome",
-    logo_sub: "Handwriting Improvement Classes • Jalgaon",
+    logo_sub: "Handwriting Classes • Jalgaon",
     nav_home: "Home",
     nav_courses: "Courses",
-    nav_results: "Before & After Results",
+    nav_results: "Results",
     nav_features: "Why Us",
     nav_certificate: "Certificate",
-    nav_timings: "Timings & Location",
+    nav_timings: "Timings",
     nav_contact: "Contact",
     btn_whatsapp: "WhatsApp Us",
     hero_badge: "✨ Jalgaon's Premier Handwriting Improvement Center",
@@ -318,15 +318,15 @@ const translations = {
   },
   mr: {
     top_notice: "अभ्यासक्रम साहित्य मोफत • वैयक्तिक १-ऑन-१ शिकवणी • सर्व वयोगटांसाठी प्रवेश सुरू",
-    logo_sub: "हस्ताक्षर सुधारणा क्लासेस • जळगाव",
+    logo_sub: "हस्ताक्षर क्लासेस • जळगाव",
     nav_home: "मुख्यपृष्ठ",
     nav_courses: "अभ्यासक्रम",
-    nav_results: "रिझल्ट्स (अगोदर / नंतर)",
+    nav_results: "रिझल्ट्स",
     nav_features: "वैशिष्ट्ये",
     nav_certificate: "प्रमाणपत्र",
-    nav_timings: "वेळ व पत्ता",
-    nav_contact: "प्रवेश चौकशी",
-    btn_whatsapp: "व्हॉट्सॲप करा",
+    nav_timings: "वेळापत्रक",
+    nav_contact: "संपर्क",
+    btn_whatsapp: "व्हॉट्सॲप",
     hero_badge: "✨ जळगावमधील अग्रगण्य हस्ताक्षर सुधारणा संस्था",
     hero_title_mr: "सुंदर हस्ताक्षर, उज्वल भविष्य!",
     hero_title_en: "काहीच दिवसात आपल्या हस्ताक्षरात १००% सुधारणा घडवा",
@@ -413,3 +413,4 @@ function setLanguage(lang) {
     lucide.createIcons();
   }
 }
+
