@@ -1,0 +1,89 @@
+/* Custom Styling & Refinements for Dhananjay Classes */
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Tab Switching Active/Inactive states */
+.result-tab.active-tab {
+  background-color: #0b1325;
+  color: #ffffff;
+  border-color: #0b1325;
+  box-shadow: 0 4px 12px rgba(11, 19, 37, 0.15);
+}
+
+.result-tab.inactive-tab {
+  background-color: #ffffff;
+  color: #475569;
+  border-color: #e2e8f0;
+}
+
+.result-tab.inactive-tab:hover {
+  background-color: #f8fafc;
+  color: #0f172a;
+  border-color: #cbd5e1;
+}
+
+/* Result Cards Fade In */
+.result-card {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.result-card.hidden {
+  display: none;
+}
+
+/* Glow animation for CTA */
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(220, 38, 38, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(220, 38, 38, 0.6);
+  }
+}
+
+.cta-pulse {
+  animation: pulseGlow 2.5s infinite;
+}
+
+/* Clean Form Focus */
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: #dc2626 !important;
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.15) !important;
+}
+
+/* Lightbox Modal Animation */
+#lightboxModal.active {
+  display: flex !important;
+  animation: fadeIn 0.2s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
