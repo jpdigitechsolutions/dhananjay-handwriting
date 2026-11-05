@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dhananjay Classes - Scan & Visit Website Poster</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800;900&family=Noto+Sans+Devanagari:wght@500;700;800;900&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              navy: '#0B1325',
+              navyDark: '#060B14',
+              red: '#DC2626',
+              gold: '#F59E0B',
+              goldDark: '#D97706'
+            }
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', '"Noto Sans Devanagari"', 'sans-serif'],
+            devanagari: ['"Noto Sans Devanagari"', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    @page {
+      size: A4 portrait;
+      margin: 0;
+    }
+    @media print {
+      body {
+        background: white !important;
+        padding: 0 !important;
+      }
+      .no-print {
+        display: none !important;
+      }
+      .poster-container {
+        box-shadow: none !important;
+        border: none !important;
+        margin: 0 !important;
+        width: 100vw !important;
+        min-height: 100vh !important;
+      }
+    }
+
+    /* Scanner Corner Frame */
+    .scanner-box {
+      position: relative;
+    }
+    .scanner-box::before, .scanner-box::after,
+    .scanner-corner-bl, .scanner-corner-br {
+      content: '';
+      position: absolute;
+      width: 24px;
+      height: 24px;
+      border-color: #dc2626;
+      border-style: solid;
+    }
+    .scanner-box::before {
+      top: -6px;
+      left: -6px;
+      border-width: 4px 0 0 4px;
+      border-top-left-radius: 8px;
+    }
+    .scanner-box::after {
+      top: -6px;
+      right: -6px;
+      border-width: 4px 4px 0 0;
+      border-top-right-radius: 8px;
+    }
+    .scanner-corner-bl {
+      bottom: -6px;
+      left: -6px;
+      border-width: 0 0 4px 4px;
+      border-bottom-left-radius: 8px;
+    }
+    .scanner-corner-br {
+      bottom: -6px;
+      right: -6px;
+      border-width: 0 4px 4px 0;
+      border-bottom-right-radius: 8px;
+    }
+  </style>
+</head>
+<body class="bg-slate-200 min-h-screen py-8 px-4 font-sans text-slate-900 flex flex-col items-center justify-center">
+
+  <!-- ================= FLOATING ACTION CONTROLS (NO PRINT) ================= -->
+  <div class="no-print fixed top-4 z-50 flex items-center gap-3 bg-white/95 backdrop-blur-md px-5 py-3 rounded-2xl shadow-xl border border-slate-300">
+    <button onclick="window.print()" class="flex items-center gap-2 bg-brand-red hover:bg-red-700 text-white font-bold text-sm px-5 py-2.5 rounded-xl shadow transition-all">
+      <i data-lucide="printer" class="w-4 h-4"></i>
+      <span>Print / Save as PDF</span>
+    </button>
+    <a href="index.html" class="flex items-center gap-2 bg-slate-800 hover:bg-slate-900 text-white font-bold text-sm px-4 py-2.5 rounded-xl shadow transition-all">
+      <i data-lucide="globe" class="w-4 h-4"></i>
+      <span>View Live Website</span>
+    </a>
+    <a href="assets/dhananjay-classes-poster.jpg" download="dhananjay-classes-poster.jpg" class="flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm px-4 py-2.5 rounded-xl shadow transition-all">
+      <i data-lucide="download" class="w-4 h-4"></i>
+      <span>Download Poster Image</span>
+    </a>
+  </div>
+
+  <!-- ================= POSTER CONTAINER (A4 PROPORTION) ================= -->
+  <div class="poster-container w-full max-w-[794px] bg-white rounded-3xl overflow-hidden shadow-2xl border-4 border-slate-900 flex flex-col justify-between my-auto">
+    
+    <!-- TOP TRUST STRIP -->
+    <div class="bg-gradient-to-r from-amber-500 via-amber-400 to-amber-500 text-slate-950 px-6 py-2 flex items-center justify-between text-xs font-black uppercase tracking-wider border-b-2 border-slate-900">
+      <span>★ 100% SATISFACTION GUARANTEED ★</span>
+      <span class="bg-brand-red text-white px-3 py-0.5 rounded-full text-[11px] animate-pulse">ADMISSION OPEN</span>
+      <span>★ JALGAON'S TRUSTED INSTITUTE ★</span>
+    </div>
+
+    <!-- MAIN HEADER -->
+    <div class="bg-brand-navy text-white px-8 pt-7 pb-6 border-b-4 border-brand-red">
+      <div class="flex items-center justify-between gap-6">
+        
+        <!-- Logo -->
+        <div class="w-24 h-24 rounded-2xl bg-white p-2 border-2 border-amber-400 shadow-xl flex-shrink-0 flex items-center justify-center">
+          <img src="assets/logo.jpeg" alt="DH Logo" class="w-full h-full object-contain" />
+        </div>
+
+        <!-- Heading Text -->
+        <div class="flex-1 text-center md:text-left">
+          <div class="flex items-center justify-center md:justify-start gap-2">
+            <h1 class="text-3xl sm:text-4xl font-black tracking-tight text-white leading-none">
+              DHANANJAY
+            </h1>
+            <span class="text-sm font-black px-2.5 py-1 rounded bg-amber-400 text-slate-950 uppercase tracking-widest border border-amber-300">
+              CLASSES
+            </span>
+          </div>
+
+          <h2 class="text-xl sm:text-2xl font-black text-amber-400 mt-2 tracking-wide uppercase">
+            Handwriting Improvement Classes
+          </h2>
+          <p class="text-base sm:text-lg font-bold text-red-400 font-devanagari mt-0.5">
+            (हस्ताक्षर सुधारणा क्लासेस • जळगाव)
+          </p>
+        </div>
+
+        <!-- Call Sir Badge -->
+        <div class="hidden sm:flex flex-col items-end flex-shrink-0 bg-slate-900/90 border border-slate-700 px-4 py-2.5 rounded-xl">
+          <span class="text-[10px] text-slate-400 uppercase font-bold tracking-wider">Direct Contact</span>
+          <span class="text-lg font-black text-amber-400 flex items-center gap-1.5 mt-0.5">
+            <i data-lucide="phone-call" class="w-4 h-4 text-emerald-400"></i>
+            7709501331
+          </span>
+        </div>
+
+      </div>
+
+      <!-- Tagline banner -->
+      <div class="mt-4 pt-3 border-t border-slate-800 flex flex-wrap items-center justify-between gap-2 text-xs">
+        <p class="font-bold text-slate-200 font-devanagari text-sm">
+          ✨ <span class="text-amber-300">सुंदर हस्ताक्षर, उज्वल भविष्य!</span> — काहीच दिवसात हस्ताक्षरात १००% खात्रीशीर बदल.
+        </p>
+        <span class="text-emerald-400 font-bold uppercase tracking-wider">1-on-1 Personal Coaching</span>
+      </div>
+    </div>
+
+    <!-- LANGUAGES STRIP -->
+    <div class="bg-slate-100 py-3 px-6 border-b border-slate-300 flex items-center justify-center gap-2 sm:gap-4 flex-wrap text-xs sm:text-sm font-extrabold text-slate-800">
+      <span class="text-slate-500 uppercase tracking-wider text-xs">Languages Taught:</span>
+      <span class="px-3 py-1 rounded-lg bg-amber-100 text-amber-900 border border-amber-300">मराठी (Marathi)</span>
+      <span class="px-3 py-1 rounded-lg bg-red-100 text-red-900 border border-red-300">हिंदी (Hindi)</span>
+      <span class="px-3 py-1 rounded-lg bg-blue-100 text-blue-900 border border-blue-300">English Print</span>
+      <span class="px-3 py-1 rounded-lg bg-purple-100 text-purple-900 border border-purple-300">English Cursive</span>
+      <span class="px-3 py-1 rounded-lg bg-emerald-100 text-emerald-900 border border-emerald-300">Mirror Writing</span>
+    </div>
+
+    <!-- ================= MAIN CENTER: SCAN QR CODE SECTION ================= -->
+    <div class="px-8 py-8 bg-gradient-to-b from-white via-slate-50 to-white">
+      <div class="bg-gradient-to-br from-slate-900 via-brand-navy to-slate-900 rounded-3xl p-6 sm:p-8 text-white border-4 border-amber-400 shadow-2xl relative overflow-hidden">
+        
+        <!-- Background radial glow -->
+        <div class="absolute -top-12 -right-12 w-64 h-64 bg-amber-500/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute -bottom-12 -left-12 w-64 h-64 bg-red-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="relative z-10 grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+          
+          <!-- Left: Big QR Code Display with Scanner Corners -->
+          <div class="md:col-span-5 flex flex-col items-center">
+            
+            <!-- Scan Pill -->
+            <div class="inline-flex items-center gap-1.5 bg-brand-red text-white text-xs font-black uppercase tracking-wider px-3.5 py-1 rounded-full shadow-lg mb-3">
+              <i data-lucide="scan" class="w-3.5 h-3.5"></i>
+              <span>SCAN ME NOW</span>
+            </div>
+
+            <!-- The QR Box -->
+            <div class="scanner-box bg-white p-3 rounded-2xl shadow-2xl border-2 border-slate-300">
+              <span class="scanner-corner-bl"></span>
+              <span class="scanner-corner-br"></span>
+              <img src="assets/qrcode.jpg" alt="Dhananjay Classes Website QR Code" class="w-48 h-48 sm:w-52 sm:h-52 object-contain rounded-xl" />
+            </div>
+
+            <!-- Hint -->
+            <p class="text-[11px] text-amber-300 font-bold mt-3 text-center flex items-center gap-1">
+              <i data-lucide="camera" class="w-3.5 h-3.5"></i>
+              Open Camera or Google Lens to Scan
+            </p>
+          </div>
+
+          <!-- Right: What You Get on the Website -->
+          <div class="md:col-span-7 space-y-4 text-left">
+            <div>
+              <span class="text-xs font-bold text-amber-400 uppercase tracking-widest bg-amber-500/20 px-3 py-1 rounded-full border border-amber-400/30">
+                Official Website & Online Portal
+              </span>
+              <h3 class="text-2xl sm:text-3xl font-black text-white mt-2 leading-tight">
+                Scan to Open Website & See Results!
+              </h3>
+              <p class="text-sm font-bold text-slate-300 font-devanagari mt-1">
+                क्लासची संपूर्ण माहिती व विद्यार्थ्यांचे प्रत्यक्ष रिझल्ट्स पाहण्यासाठी स्कॅन करा.
+              </p>
+            </div>
+
+            <!-- Website link box -->
+            <div class="p-3 rounded-xl bg-slate-800/90 border border-slate-700 flex items-center gap-2.5 text-xs text-slate-300">
+              <i data-lucide="link" class="w-4 h-4 text-amber-400 flex-shrink-0"></i>
+              <span class="font-mono text-white font-bold select-all truncate">
+                dhananjayhandwritingclasses.netlify.app
+              </span>
+            </div>
+
+            <!-- Feature Checklist of Website -->
+            <div class="space-y-2 text-xs font-bold text-slate-200">
+              <div class="flex items-center gap-2">
+                <div class="w-5 h-5 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center flex-shrink-0">
+                  <i data-lucide="check" class="w-3.5 h-3.5"></i>
+                </div>
+                <span>See Real Student Before vs After Sheets (मराठी, हिंदी, English)</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <div class="w-5 h-5 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center flex-shrink-0">
+                  <i data-lucide="check" class="w-3.5 h-3.5"></i>
+                </div>
+                <span>1-Click Direct WhatsApp Admission Inquiry with Dhananjay Sir</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <div class="w-5 h-5 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center flex-shrink-0">
+                  <i data-lucide="check" class="w-3.5 h-3.5"></i>
+                </div>
+                <span>Turn-by-Turn Google Maps Navigation to Mahabal Branch</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <div class="w-5 h-5 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center flex-shrink-0">
+                  <i data-lucide="check" class="w-3.5 h-3.5"></i>
+                </div>
+                <span>Bilingual in English & मराठी (Click button to switch language)</span>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- ================= KEY FEATURES GRID (6 HIGHLIGHTS) ================= -->
+    <div class="px-8 pb-6">
+      <div class="text-center mb-4">
+        <h4 class="text-xs font-black uppercase tracking-widest text-slate-400">Class Highlights & Facilities</h4>
+      </div>
+
+      <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 text-xs">
+        
+        <div class="p-3 rounded-xl bg-amber-50 border border-amber-200 flex items-start gap-2.5">
+          <div class="p-1.5 rounded-lg bg-amber-500 text-white flex-shrink-0 mt-0.5">
+            <i data-lucide="book-open" class="w-3.5 h-3.5"></i>
+          </div>
+          <div>
+            <h5 class="font-extrabold text-slate-900">अभ्यासक्रम साहित्य मोफत</h5>
+            <p class="text-[11px] text-slate-600 mt-0.5 leading-tight">Free Study Material & Kit provided with course.</p>
+          </div>
+        </div>
+
+        <div class="p-3 rounded-xl bg-red-50 border border-red-200 flex items-start gap-2.5">
+          <div class="p-1.5 rounded-lg bg-brand-red text-white flex-shrink-0 mt-0.5">
+            <i data-lucide="user-check" class="w-3.5 h-3.5"></i>
+          </div>
+          <div>
+            <h5 class="font-extrabold text-slate-900">वैयक्तिक शिकवणी (1-on-1)</h5>
+            <p class="text-[11px] text-slate-600 mt-0.5 leading-tight">Individual teaching & separate attention.</p>
+          </div>
+        </div>
+
+        <div class="p-3 rounded-xl bg-emerald-50 border border-emerald-200 flex items-start gap-2.5">
+          <div class="p-1.5 rounded-lg bg-emerald-600 text-white flex-shrink-0 mt-0.5">
+            <i data-lucide="zap" class="w-3.5 h-3.5"></i>
+          </div>
+          <div>
+            <h5 class="font-extrabold text-slate-900">गतिमान लिखाण सराव</h5>
+            <p class="text-[11px] text-slate-600 mt-0.5 leading-tight">Speed writing practice for school & board exams.</p>
+          </div>
+        </div>
+
+        <div class="p-3 rounded-xl bg-blue-50 border border-blue-200 flex items-start gap-2.5">
+          <div class="p-1.5 rounded-lg bg-blue-600 text-white flex-shrink-0 mt-0.5">
+            <i data-lucide="clock" class="w-3.5 h-3.5"></i>
+          </div>
+          <div>
+            <h5 class="font-extrabold text-slate-900">कोणतीही वेळ निवडण्याची सोय</h5>
+            <p class="text-[11px] text-slate-600 mt-0.5 leading-tight">Choose any flexible morning or evening batch.</p>
+          </div>
+        </div>
+
+        <div class="p-3 rounded-xl bg-purple-50 border border-purple-200 flex items-start gap-2.5">
+          <div class="p-1.5 rounded-lg bg-purple-600 text-white flex-shrink-0 mt-0.5">
+            <i data-lucide="calendar" class="w-3.5 h-3.5"></i>
+          </div>
+          <div>
+            <h5 class="font-extrabold text-slate-900">कमीत कमी दिवसात पूर्ण</h5>
+            <p class="text-[11px] text-slate-600 mt-0.5 leading-tight">Fast-track course option in minimum days.</p>
+          </div>
+        </div>
+
+        <div class="p-3 rounded-xl bg-amber-50 border border-amber-200 flex items-start gap-2.5">
+          <div class="p-1.5 rounded-lg bg-amber-600 text-white flex-shrink-0 mt-0.5">
+            <i data-lucide="award" class="w-3.5 h-3.5"></i>
+          </div>
+          <div>
+            <h5 class="font-extrabold text-slate-900">कोर्स प्रमाणपत्र प्रदान</h5>
+            <p class="text-[11px] text-slate-600 mt-0.5 leading-tight">Official Certificate of Achievement awarded.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ================= FOOTER & BRANCH LOCATION ================= -->
+    <div class="bg-brand-navy text-white px-8 py-5 border-t-4 border-amber-400">
+      
+      <div class="grid grid-cols-1 sm:grid-cols-12 gap-4 items-center">
+        
+        <!-- Left: Address & Timings -->
+        <div class="sm:col-span-8 space-y-1 text-left">
+          <div class="flex items-center gap-2">
+            <span class="text-amber-400 font-extrabold text-xs uppercase tracking-wider">Main Branch:</span>
+            <span class="text-xs text-slate-200 font-bold">Mohan Nagar Road, Chaitraban Colony, Mahabal Area, Jalgaon</span>
+          </div>
+          <div class="text-[11px] text-slate-300 flex flex-wrap items-center gap-x-4 gap-y-0.5 font-medium">
+            <span>⏰ <strong>Mon–Sat:</strong> 8:00 AM – 1:00 PM & 3:00 PM – 9:00 PM</span>
+            <span>⏰ <strong>Sunday:</strong> 9:00 AM – 1:00 PM (Eve. Closed)</span>
+          </div>
+          <p class="text-[11px] text-amber-300 font-bold font-devanagari">
+            * (Please come to the class to get all information benefits about Handwriting class) *
+          </p>
+        </div>
+
+        <!-- Right: Instructor & Big Contact -->
+        <div class="sm:col-span-4 flex flex-col items-start sm:items-end justify-center border-t sm:border-t-0 sm:border-l border-slate-700 pt-3 sm:pt-0 sm:pl-4">
+          <span class="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Handwriting Sir: Dhananjay R. Dishware</span>
+          <a href="tel:7709501331" class="text-2xl font-black text-amber-400 flex items-center gap-2 hover:underline">
+            <i data-lucide="phone" class="w-5 h-5 text-emerald-400"></i>
+            7709501331
+          </a>
+          <span class="text-[10px] text-emerald-300 font-bold">Call & WhatsApp for Admission</span>
+        </div>
+
+      </div>
+
+      <!-- Developer & Copyright Strip -->
+      <div class="mt-4 pt-3 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between text-[10px] text-slate-400 gap-2">
+        <span>© 2026 DHANANJAY Classes • Handwriting Improvement Classes, Jalgaon</span>
+        <span class="font-bold text-slate-300 uppercase tracking-wider">
+          DESIGN AND DEVELOP BY <a href="https://jpdigitechsolutions.netlify.app" target="_blank" class="text-amber-400 hover:underline">JPDIGITECHSOLUTION</a>
+        </span>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- Google Firebase Analytics Engine -->
+  <script type="module" src="firebase-analytics.js"></script>
+
+  <script>
+    if (window.lucide) {
+      lucide.createIcons();
+    }
+  </script>
+</body>
+</html>
+

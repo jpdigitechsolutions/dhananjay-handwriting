@@ -1,0 +1,18 @@
+# Netlify Configuration for Dhananjay Classes
+
+[build]
+  publish = "."
+
+# Ensure clean routing
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Security & Performance Headers
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    X-XSS-Protection = "1; mode=block"
+
